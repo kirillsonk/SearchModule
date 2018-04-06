@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<form action="{{ url_for('index') }}" method="POST">
+
+    <div class="form-group">
+        <label for="exampleInputAuthor">Автор</label>
+        <input type="text" class="form-control" id="exampleInputAuthor" placeholder="Имя" name="author" value="{{ request.form.get('author', '') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputTitle">Название статьи</label>
+        <input type="text" class="form-control" id="exampleInputTitle" placeholder="Название" name="title" value="{{ request.form.get('title', '') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputKeyWords">Ключевые слова</label>
+        <input type="text" class="form-control" id="exampleInputKeyWords" placeholder="Ключевые слова" name="keywords" value="{{ request.form.get('keywords', '') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputYear1">Год1</label>
+        <input type="text" class="form-control" id="exampleInputYear1" placeholder="Год1" name="year1" value="{{ request.form.get('year1', '') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputYear2">Год2</label>
+        <input type="text" class="form-control" id="exampleInputYear2" placeholder="Год2" name="year2" value="{{ request.form.get('year2', '') }}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Найти</button>
+
+</form>
+
+{% endblock %}
